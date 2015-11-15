@@ -58,11 +58,11 @@ class connectDB(npyscreen.Form):
 
 class EditForm(npyscreen.ActionForm):
     def create(self):
+        self.show_atx = 20
+        self.show_aty = 5
         self.new_value = self.add(npyscreen.TitleText, name = 'New value:')
-        self.display()
 	
     def on_ok(self):
-        #get table, row, col, old val data
         table = self.parentApp.getForm('INTERFACE').current_table
         row = self.parentApp.getForm('INTERFACE').mainScreen.edit_cell[0]
         col = self.parentApp.getForm('INTERFACE').mainScreen.edit_cell[1]
@@ -108,18 +108,22 @@ class MainForm(npyscreen.ActionForm, npyscreen.FormWithMenus):
         self.menu.addItem('Delete Row', self.press_5, '5')
 
     def press_1(self):
-        npyscreen.notify_ok_cancel('User will enter new table info here.', 'Add Table', editw = 1)
-		#get user data
-		#add table to db
-		#display new table
+        #user will be sent to AddTable form
+        pass   
+ 
     def press_2(self):
-        npyscreen.notify_ok_cancel('User will be asked to confirm table deletion here.', 'Delete Table', editw = 1)
+        #user will be sent to DeleteTable form   
+        pass
+ 
     def press_3(self):
-        #npyscreen.notify_ok_cancel('User will enter new value here.', 'Edit Selected Value', editw = 1)
         self.parentApp.switchForm('EDIT_VALUE')
+    
     def press_4(self):
-        npyscreen.notify_ok_cancel('User will enter new row info here.', 'Add Row', editw = 1)
+        #user will be sent to AddRow form   
+        pass
+ 
     def press_5(self):
+        #user will be sent to DeleteRow form
         pass
 
     def while_editing(self, *args):
@@ -150,8 +154,12 @@ class DB_UI(npyscreen.NPSAppManaged):
                      columns=40,
                      name='Connect to Database'
         )
+        self.addForm('EDIT_VALUE', EditForm,
+                     lines=10,
+                     columns=40,
+                     name='EditForm'
+        )
         self.addForm('INTERFACE', MainForm)
-        self.addForm('EDIT_VALUE', EditForm)
 
 if __name__ == '__main__':
     UI = DB_UI()

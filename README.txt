@@ -2,14 +2,12 @@
 * Program: interface.py                             *
 * Authors: Abby Meunier, Andrea Reina               *
 * Date:	   12/11/15                                 *
-* Course:  CS 419                                   *
-* Group:   8                                        *
 *****************************************************
 
 
-******************************************
-* Installation (also included in report) *
-******************************************
+****************
+* Installation *
+****************
 
 Install Python 2.7 and PostgreSQL according to your operating system's instructions:
 

@@ -1,6 +1,6 @@
 *****************************************************
 * Program: interface.py                             *
-* Authors: Andrea Reina, Abby Meunier, Andrew Rice  *
+* Authors: Abby Meunier, Andrea Reina               *
 * Date:	   12/11/15                                 *
 * Course:  CS 419                                   *
 * Group:   8                                        *
